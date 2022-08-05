@@ -2,8 +2,10 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateEbayOrdersLocations = /* GraphQL */ `
-  subscription OnCreateEbayOrdersLocations {
-    onCreateEbayOrdersLocations {
+  subscription OnCreateEbayOrdersLocations(
+    $filter: ModelSubscriptionEbayOrdersLocationsFilterInput
+  ) {
+    onCreateEbayOrdersLocations(filter: $filter) {
       id
       lineItemsLocations
       createdAt
@@ -15,8 +17,10 @@ export const onCreateEbayOrdersLocations = /* GraphQL */ `
   }
 `;
 export const onUpdateEbayOrdersLocations = /* GraphQL */ `
-  subscription OnUpdateEbayOrdersLocations {
-    onUpdateEbayOrdersLocations {
+  subscription OnUpdateEbayOrdersLocations(
+    $filter: ModelSubscriptionEbayOrdersLocationsFilterInput
+  ) {
+    onUpdateEbayOrdersLocations(filter: $filter) {
       id
       lineItemsLocations
       createdAt
@@ -28,8 +32,10 @@ export const onUpdateEbayOrdersLocations = /* GraphQL */ `
   }
 `;
 export const onDeleteEbayOrdersLocations = /* GraphQL */ `
-  subscription OnDeleteEbayOrdersLocations {
-    onDeleteEbayOrdersLocations {
+  subscription OnDeleteEbayOrdersLocations(
+    $filter: ModelSubscriptionEbayOrdersLocationsFilterInput
+  ) {
+    onDeleteEbayOrdersLocations(filter: $filter) {
       id
       lineItemsLocations
       createdAt
@@ -41,8 +47,10 @@ export const onDeleteEbayOrdersLocations = /* GraphQL */ `
   }
 `;
 export const onCreateLocations = /* GraphQL */ `
-  subscription OnCreateLocations {
-    onCreateLocations {
+  subscription OnCreateLocations(
+    $filter: ModelSubscriptionLocationsFilterInput
+  ) {
+    onCreateLocations(filter: $filter) {
       id
       location
       createdAt
@@ -54,8 +62,10 @@ export const onCreateLocations = /* GraphQL */ `
   }
 `;
 export const onUpdateLocations = /* GraphQL */ `
-  subscription OnUpdateLocations {
-    onUpdateLocations {
+  subscription OnUpdateLocations(
+    $filter: ModelSubscriptionLocationsFilterInput
+  ) {
+    onUpdateLocations(filter: $filter) {
       id
       location
       createdAt
@@ -67,8 +77,10 @@ export const onUpdateLocations = /* GraphQL */ `
   }
 `;
 export const onDeleteLocations = /* GraphQL */ `
-  subscription OnDeleteLocations {
-    onDeleteLocations {
+  subscription OnDeleteLocations(
+    $filter: ModelSubscriptionLocationsFilterInput
+  ) {
+    onDeleteLocations(filter: $filter) {
       id
       location
       createdAt
@@ -80,8 +92,8 @@ export const onDeleteLocations = /* GraphQL */ `
   }
 `;
 export const onCreateBrands = /* GraphQL */ `
-  subscription OnCreateBrands {
-    onCreateBrands {
+  subscription OnCreateBrands($filter: ModelSubscriptionBrandsFilterInput) {
+    onCreateBrands(filter: $filter) {
       id
       name
       createdAt
@@ -93,8 +105,8 @@ export const onCreateBrands = /* GraphQL */ `
   }
 `;
 export const onUpdateBrands = /* GraphQL */ `
-  subscription OnUpdateBrands {
-    onUpdateBrands {
+  subscription OnUpdateBrands($filter: ModelSubscriptionBrandsFilterInput) {
+    onUpdateBrands(filter: $filter) {
       id
       name
       createdAt
@@ -106,8 +118,8 @@ export const onUpdateBrands = /* GraphQL */ `
   }
 `;
 export const onDeleteBrands = /* GraphQL */ `
-  subscription OnDeleteBrands {
-    onDeleteBrands {
+  subscription OnDeleteBrands($filter: ModelSubscriptionBrandsFilterInput) {
+    onDeleteBrands(filter: $filter) {
       id
       name
       createdAt
@@ -119,8 +131,11 @@ export const onDeleteBrands = /* GraphQL */ `
   }
 `;
 export const onCreateProducts = /* GraphQL */ `
-  subscription OnCreateProducts($owner: String) {
-    onCreateProducts(owner: $owner) {
+  subscription OnCreateProducts(
+    $filter: ModelSubscriptionProductsFilterInput
+    $owner: String
+  ) {
+    onCreateProducts(filter: $filter, owner: $owner) {
       id
       title
       description
@@ -167,8 +182,11 @@ export const onCreateProducts = /* GraphQL */ `
   }
 `;
 export const onUpdateProducts = /* GraphQL */ `
-  subscription OnUpdateProducts($owner: String) {
-    onUpdateProducts(owner: $owner) {
+  subscription OnUpdateProducts(
+    $filter: ModelSubscriptionProductsFilterInput
+    $owner: String
+  ) {
+    onUpdateProducts(filter: $filter, owner: $owner) {
       id
       title
       description
@@ -215,8 +233,11 @@ export const onUpdateProducts = /* GraphQL */ `
   }
 `;
 export const onDeleteProducts = /* GraphQL */ `
-  subscription OnDeleteProducts($owner: String) {
-    onDeleteProducts(owner: $owner) {
+  subscription OnDeleteProducts(
+    $filter: ModelSubscriptionProductsFilterInput
+    $owner: String
+  ) {
+    onDeleteProducts(filter: $filter, owner: $owner) {
       id
       title
       description
@@ -263,8 +284,10 @@ export const onDeleteProducts = /* GraphQL */ `
   }
 `;
 export const onCreateEbayItemsCompatibility = /* GraphQL */ `
-  subscription OnCreateEbayItemsCompatibility {
-    onCreateEbayItemsCompatibility {
+  subscription OnCreateEbayItemsCompatibility(
+    $filter: ModelSubscriptionEbayItemsCompatibilityFilterInput
+  ) {
+    onCreateEbayItemsCompatibility(filter: $filter) {
       id
       itemCompatibilityList
       createdAt
@@ -276,8 +299,10 @@ export const onCreateEbayItemsCompatibility = /* GraphQL */ `
   }
 `;
 export const onUpdateEbayItemsCompatibility = /* GraphQL */ `
-  subscription OnUpdateEbayItemsCompatibility {
-    onUpdateEbayItemsCompatibility {
+  subscription OnUpdateEbayItemsCompatibility(
+    $filter: ModelSubscriptionEbayItemsCompatibilityFilterInput
+  ) {
+    onUpdateEbayItemsCompatibility(filter: $filter) {
       id
       itemCompatibilityList
       createdAt
@@ -289,8 +314,10 @@ export const onUpdateEbayItemsCompatibility = /* GraphQL */ `
   }
 `;
 export const onDeleteEbayItemsCompatibility = /* GraphQL */ `
-  subscription OnDeleteEbayItemsCompatibility {
-    onDeleteEbayItemsCompatibility {
+  subscription OnDeleteEbayItemsCompatibility(
+    $filter: ModelSubscriptionEbayItemsCompatibilityFilterInput
+  ) {
+    onDeleteEbayItemsCompatibility(filter: $filter) {
       id
       itemCompatibilityList
       createdAt
@@ -302,8 +329,10 @@ export const onDeleteEbayItemsCompatibility = /* GraphQL */ `
   }
 `;
 export const onCreateEbayItems = /* GraphQL */ `
-  subscription OnCreateEbayItems {
-    onCreateEbayItems {
+  subscription OnCreateEbayItems(
+    $filter: ModelSubscriptionEbayItemsFilterInput
+  ) {
+    onCreateEbayItems(filter: $filter) {
       id
       applicationData
       autoPay
@@ -375,8 +404,10 @@ export const onCreateEbayItems = /* GraphQL */ `
   }
 `;
 export const onUpdateEbayItems = /* GraphQL */ `
-  subscription OnUpdateEbayItems {
-    onUpdateEbayItems {
+  subscription OnUpdateEbayItems(
+    $filter: ModelSubscriptionEbayItemsFilterInput
+  ) {
+    onUpdateEbayItems(filter: $filter) {
       id
       applicationData
       autoPay
@@ -448,8 +479,10 @@ export const onUpdateEbayItems = /* GraphQL */ `
   }
 `;
 export const onDeleteEbayItems = /* GraphQL */ `
-  subscription OnDeleteEbayItems {
-    onDeleteEbayItems {
+  subscription OnDeleteEbayItems(
+    $filter: ModelSubscriptionEbayItemsFilterInput
+  ) {
+    onDeleteEbayItems(filter: $filter) {
       id
       applicationData
       autoPay
@@ -521,8 +554,10 @@ export const onDeleteEbayItems = /* GraphQL */ `
   }
 `;
 export const onCreateEbayOrders = /* GraphQL */ `
-  subscription OnCreateEbayOrders {
-    onCreateEbayOrders {
+  subscription OnCreateEbayOrders(
+    $filter: ModelSubscriptionEbayOrdersFilterInput
+  ) {
+    onCreateEbayOrders(filter: $filter) {
       id
       orderId
       legacyOrderId
@@ -553,8 +588,10 @@ export const onCreateEbayOrders = /* GraphQL */ `
   }
 `;
 export const onUpdateEbayOrders = /* GraphQL */ `
-  subscription OnUpdateEbayOrders {
-    onUpdateEbayOrders {
+  subscription OnUpdateEbayOrders(
+    $filter: ModelSubscriptionEbayOrdersFilterInput
+  ) {
+    onUpdateEbayOrders(filter: $filter) {
       id
       orderId
       legacyOrderId
@@ -585,8 +622,10 @@ export const onUpdateEbayOrders = /* GraphQL */ `
   }
 `;
 export const onDeleteEbayOrders = /* GraphQL */ `
-  subscription OnDeleteEbayOrders {
-    onDeleteEbayOrders {
+  subscription OnDeleteEbayOrders(
+    $filter: ModelSubscriptionEbayOrdersFilterInput
+  ) {
+    onDeleteEbayOrders(filter: $filter) {
       id
       orderId
       legacyOrderId
@@ -617,8 +656,10 @@ export const onDeleteEbayOrders = /* GraphQL */ `
   }
 `;
 export const onCreateEbayAccounts = /* GraphQL */ `
-  subscription OnCreateEbayAccounts {
-    onCreateEbayAccounts {
+  subscription OnCreateEbayAccounts(
+    $filter: ModelSubscriptionEbayAccountsFilterInput
+  ) {
+    onCreateEbayAccounts(filter: $filter) {
       id
       name
       accessTokenUAT
@@ -635,8 +676,10 @@ export const onCreateEbayAccounts = /* GraphQL */ `
   }
 `;
 export const onUpdateEbayAccounts = /* GraphQL */ `
-  subscription OnUpdateEbayAccounts {
-    onUpdateEbayAccounts {
+  subscription OnUpdateEbayAccounts(
+    $filter: ModelSubscriptionEbayAccountsFilterInput
+  ) {
+    onUpdateEbayAccounts(filter: $filter) {
       id
       name
       accessTokenUAT
@@ -653,8 +696,10 @@ export const onUpdateEbayAccounts = /* GraphQL */ `
   }
 `;
 export const onDeleteEbayAccounts = /* GraphQL */ `
-  subscription OnDeleteEbayAccounts {
-    onDeleteEbayAccounts {
+  subscription OnDeleteEbayAccounts(
+    $filter: ModelSubscriptionEbayAccountsFilterInput
+  ) {
+    onDeleteEbayAccounts(filter: $filter) {
       id
       name
       accessTokenUAT
