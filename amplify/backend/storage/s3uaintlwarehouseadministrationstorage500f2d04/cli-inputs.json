@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3uaintlwarehouseadministrationstorage500f2d04",
+  "bucketName": "uaintlwarehouseadministration-storage-500f2d04",
+  "policyUUID": "e86aab77",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

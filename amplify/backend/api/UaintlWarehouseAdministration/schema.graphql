@@ -1,0 +1,209 @@
+type EbayOrdersLocations @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  lineItemsLocations: AWSJSON
+}
+
+type Locations
+  @model
+  @auth(
+    rules: [
+      { allow: public }
+      {
+        allow: groups
+        groups: ["Administrators"]
+        operations: [read, create, update, delete]
+      }
+      { allow: groups, groups: ["Staff"], operations: [read, create, update] }
+    ]
+  ) {
+  id: ID!
+  location: String
+}
+
+type Brands
+  @model
+  @auth(
+    rules: [
+      { allow: public }
+      {
+        allow: groups
+        groups: ["Administrators"]
+        operations: [read, create, update, delete]
+      }
+      { allow: groups, groups: ["Staff"], operations: [read, create, update] }
+    ]
+  ) {
+  id: ID!
+  name: String
+}
+
+type Products
+  @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
+  @auth(
+    rules: [
+      { allow: public }
+      {
+        allow: groups
+        groups: ["Administrators"]
+        operations: [read, create, update, delete]
+      }
+      { allow: groups, groups: ["Staff"], operations: [read, create, update] }
+      { allow: owner, operations: [create, read, update] }
+    ]
+  )
+  @searchable {
+  id: ID!
+  title: String
+  description: String
+  manufacturerPartNumbers: AWSJSON
+  interchangePartNumbers: AWSJSON
+  otherPartNumbers: AWSJSON
+  brand: String
+  UPC: String
+  EAN: String
+  ISBN: String
+  images: AWSJSON
+  condition: AWSJSON
+  conditionCode: String
+  conditionDescription: String
+  length: Float
+  width: Float
+  depth: Float
+  weight: Float
+  weightUnit: String
+  lengthUnit: String
+  inStock: AWSJSON
+  totalAvailable: Int
+  hasCompatibilityList: Boolean
+  channelsLinked: AWSJSON
+  tags: AWSJSON
+  listingStatus: String
+  parent: String
+  isDraft: Boolean
+  waitingLocation: Boolean
+  ebayAccountLinked: String
+  freeShipping: Boolean
+  ebayItemId: String
+  ebayCategoryId: String
+  ebayMotors: Boolean
+  ebayBestOffer: Boolean
+  price: Float
+  owner: String
+  createdOn: AWSDateTime!
+  updatedOn: AWSDateTime!
+}
+
+type EbayItemsCompatibility @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  itemCompatibilityList: AWSJSON
+}
+
+type EbayItems @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  applicationData: String
+  autoPay: Boolean
+  bestOfferDetails: AWSJSON
+  buyerProtection: String
+  buyerRequirementDetails: String
+  buyerResponsibleForShipping: Boolean
+  conditionDescription: String
+  conditionDisplayName: String
+  conditionID: Int
+  country: String
+  currency: String
+  description: String
+  digitalGoodInfo: String
+  disableBuyerRequirements: Boolean
+  discountPriceInfo: String
+  dispatchTimeMax: Int
+  eMailDeliveryAvailable: Boolean
+  freeAddedCategory: String
+  ignoreQuantity: Boolean
+  inventoryTrackingMethod: String
+  isIntermediatedShippingEligible: Boolean
+  isSecureDescription: Boolean
+  itemCompatibilityCount: Int
+  itemID: String
+  itemPolicyViolation: String
+  itemSpecifics: AWSJSON
+  listingDetails: AWSJSON
+  listingDuration: String
+  listingEnhancement: String
+  listingSubtype2: String
+  listingType: String
+  location: String
+  locationDefaulted: String
+  lotSize: Int
+  paymentAllowedSite: String
+  paymentDetails: String
+  paymentMethods: String
+  pictureDetails: AWSJSON
+  postalCode: String
+  primaryCategory: AWSJSON
+  privateListing: Boolean
+  productListingDetails: AWSJSON
+  relistParentID: Int
+  returnPolicy: AWSJSON
+  secondaryCategory: AWSJSON
+  seller: AWSJSON
+  sellerProfiles: AWSJSON
+  sellingStatus: AWSJSON
+  shippingDetails: AWSJSON
+  shippingPackageDetails: AWSJSON
+  shippingServiceCostOverrideList: AWSJSON
+  shipToLocations: AWSJSON
+  site: String
+  SKU: String
+  startPrice: AWSJSON
+  storefront: AWSJSON
+  subTitle: String
+  title: String
+  unitInfo: String
+  UUID: String
+  videoDetails: AWSJSON
+}
+
+type EbayOrders @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  orderId: String
+  legacyOrderId: String
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+  orderFulfillmentStatus: String
+  orderPaymentStatus: String
+  sellerId: String
+  buyer: AWSJSON
+  buyerCheckoutNotes: String
+  pricingSummary: AWSJSON
+  cancelStatus: AWSJSON
+  paymentSummary: AWSJSON
+  fulfillmentStartInstructions: AWSJSON
+  fulfillmentHrefs: AWSJSON
+  lineItems: AWSJSON
+  ebayCollectAndRemitTax: Boolean
+  salesRecordReference: String
+  totalFeeBasisAmount: AWSJSON
+  totalMarketplaceFee: AWSJSON
+  locations: AWSJSON
+}
+
+type EbayAccounts
+  @model
+  @auth(
+    rules: [
+      { allow: public }
+      {
+        allow: groups
+        groups: ["Administrators"]
+        operations: [read, create, update, delete]
+      }
+    ]
+  ) {
+  id: ID!
+  name: String
+  accessTokenUAT: String
+  expiresInUAT: Int
+  refreshTokenUAT: String
+  refreshTokenExpiresInUAT: Int
+  tokenTypeUAT: String
+}
